@@ -10,22 +10,23 @@ import UIKit
 
 class BookTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var bookTitle: UILabel!
+    @IBOutlet weak var beenRead: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    var book: Book?
+    weak var delegate: BookTableViewCellDelegate?
     
-    @IBAction func createBook(_ sender: UIButton) {
+    private func updateViews() {
+        guard let book = book else { return }
         
+        bookTitle.text = book.title
+    
+        
+        let image = book.hasBeenRead ? #imageLiteral(resourceName: "checked") : #imageLiteral(resourceName: "unchecked")
+        beenRead.setImage(image, for: .normal)
     }
-
+    
+    @IBAction func beenReadTapped(_ sender: UIButton) {
+        delegate?.toggleHasBeenRead(for: self)
+    }
 }

@@ -17,6 +17,7 @@
 		85951D81235768890019F1E1 /* ReadingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85951D80235768890019F1E1 /* ReadingListTableViewController.swift */; };
 		85951D83235768AE0019F1E1 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85951D82235768AE0019F1E1 /* BookTableViewCell.swift */; };
 		85951D8523576F660019F1E1 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85951D8423576F660019F1E1 /* BookDetailViewController.swift */; };
+		85951D872357CE9E0019F1E1 /* BookTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85951D862357CE9E0019F1E1 /* BookTableViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		85951D80235768890019F1E1 /* ReadingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListTableViewController.swift; sourceTree = "<group>"; };
 		85951D82235768AE0019F1E1 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		85951D8423576F660019F1E1 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		85951D862357CE9E0019F1E1 /* BookTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				4669416A2110E22B00E7FF73 /* ViewController.swift */,
 				4669416C2110E22B00E7FF73 /* Main.storyboard */,
 				85951D80235768890019F1E1 /* ReadingListTableViewController.swift */,
+				85951D862357CE9E0019F1E1 /* BookTableViewCellDelegate.swift */,
 				85951D8423576F660019F1E1 /* BookDetailViewController.swift */,
 				85951D82235768AE0019F1E1 /* BookTableViewCell.swift */,
 				85951D7E235687C80019F1E1 /* BookController.swift */,
@@ -169,6 +172,7 @@
 				4669416B2110E22B00E7FF73 /* ViewController.swift in Sources */,
 				85951D81235768890019F1E1 /* ReadingListTableViewController.swift in Sources */,
 				466941692110E22A00E7FF73 /* AppDelegate.swift in Sources */,
+				85951D872357CE9E0019F1E1 /* BookTableViewCellDelegate.swift in Sources */,
 				85951D7F235687C80019F1E1 /* BookController.swift in Sources */,
 				85951D8523576F660019F1E1 /* BookDetailViewController.swift in Sources */,
 				85951D83235768AE0019F1E1 /* BookTableViewCell.swift in Sources */,
