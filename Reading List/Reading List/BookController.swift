@@ -40,11 +40,16 @@ class BookController {
         saveToPersistentStore()
     }
     
+//    var readBooks: [Book] {
+////        guard let read = Book(title: book.title, reasonToRead: book.reasonToRead, book.hasBeenRead: Bool) else { return }
+//        let readFiltered = books.filter { $0.hasBeenRead }
+//    }
+    
     // MARK: - Persistence
     
     private var readingListURL: URL? {
         let fm = FileManager.default
-        guard let dir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
+        guard let dir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
         return dir.appendingPathComponent("ReadingList.plist")
     }
     
