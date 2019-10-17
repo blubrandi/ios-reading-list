@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="TJk-I0-8ZB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" rowHeight="60" id="TJk-I0-8ZB" customClass="BookTableViewCell" customModule="Reading_List" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJk-I0-8ZB" id="Lqe-qs-Uuh">
@@ -50,7 +50,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eNM-Ls-wuJ" kind="show" id="5m9-TG-QeH"/>
+                                    <segue destination="eNM-Ls-wuJ" kind="show" identifier="UpdateBook" id="5m9-TG-QeH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="833" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Detail View Controller-->
         <scene sceneID="MyG-1b-JCD">
             <objects>
-                <viewController id="eNM-Ls-wuJ" sceneMemberID="viewController">
+                <viewController id="eNM-Ls-wuJ" customClass="BookDetailViewController" customModule="Reading_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lu3-Ln-deb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,8 +107,16 @@
                         <viewLayoutGuide key="safeArea" id="Yeg-Z7-VC2"/>
                     </view>
                     <navigationItem key="navigationItem" id="FRr-Ns-sKT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wIU-8T-kpi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wIU-8T-kpi">
+                            <connections>
+                                <action selector="saveBook:" destination="eNM-Ls-wuJ" id="WMr-qa-LbV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bookReason" destination="Y5t-2D-N9E" id="dTf-uM-8At"/>
+                        <outlet property="bookTitle" destination="unq-UH-OBi" id="nSv-bL-8gZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaC-T5-48O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,6 +146,6 @@
         <image name="unchecked" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GzJ-Wb-9Je"/>
+        <segue reference="5m9-TG-QeH"/>
     </inferredMetricsTieBreakers>
 </document>

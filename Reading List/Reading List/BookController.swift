@@ -32,18 +32,28 @@ class BookController {
         saveToPersistentStore()
     }
     
-    // Check code, revisit this.  Rough guess about if this is what really works.
-    func updateBookInfo(for book: Book) {
-        guard let indexOfBookToUpdate = books.index(of: book) else { return }
-        let bookInfo = Book(title: book.title, reasonToRead: book.reasonToRead, hasBeenRead: book.hasBeenRead)
-        books[indexOfBookToUpdate] = bookInfo
-        saveToPersistentStore()
+
+    func updateBookInfo(for book: Book, title: String, reasonToRead: String) {
+          guard let index = books.firstIndex(of: book) else { return }
+                
+        var bookToUpdate = book
+        
+        bookToUpdate.title = title
+        bookToUpdate.reasonToRead = reasonToRead
+        
+        books.remove(at: index)
+        books.insert(bookToUpdate, at: index)
     }
     
-//    var readBooks: [Book] {
-////        guard let read = Book(title: book.title, reasonToRead: book.reasonToRead, book.hasBeenRead: Bool) else { return }
-//        let readFiltered = books.filter { $0.hasBeenRead }
-//    }
+    var readBooks: [Book] {
+        let readFiltered = books.filter({ $0.hasBeenRead })
+        return readFiltered
+    }
+    
+    var unreadBooks: [Book] {
+        let unreadFiltered = books.filter({ $0.hasBeenRead == false })
+        return unreadFiltered
+    }
     
     // MARK: - Persistence
     
